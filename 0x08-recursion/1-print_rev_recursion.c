@@ -8,7 +8,7 @@
 
 void _print_rev_recursion(char *s)
 {
-	if (strlen(s) == 0)
+	if (s[0] == '\0')
 	{
 		return;
 	}
