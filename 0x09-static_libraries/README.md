@@ -1,1 +1,2 @@
 0x09-static_libraries projects
+create_static_lib.sh
