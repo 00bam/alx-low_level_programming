@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	int counter;
 	unsigned long int i = 1, j = 0, tempo, sum = 0;
 
 	for ( ; i <= 4000000; )
