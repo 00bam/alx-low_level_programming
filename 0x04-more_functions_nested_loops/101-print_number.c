@@ -6,18 +6,18 @@
  */
 void print_number(int n)
 {
-	int i = 0, j = n, k;
-
-	do {
-		j = j / 10;
-		i++;
-	} while (j != 0);
+	unsigned int i = 0, j = n, k;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
+
+	do {
+		j = j / 10;
+		i++;
+	} while (j != 0);
 
 	for ( ; i > 0; i--)
 	{
