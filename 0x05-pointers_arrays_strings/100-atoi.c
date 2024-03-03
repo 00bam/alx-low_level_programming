@@ -6,13 +6,11 @@
  */
 int _atoi(char *s)
 {
-	int sign = 0, value = 0, signal = 0, multiplier = 1;
+	int sign = 0, value = 0, signal = 0, multiplier = 1, mul = 1, digits = 0;
 
 	for ( ; *s != '\0'; s++)
 	{
 		if (*s == '-')
-			sign--;
-		else if (*s == '+')
 			sign++;
 
 		if (*s >= '0' && *s <= '9')
@@ -27,13 +25,15 @@ int _atoi(char *s)
 			break;
 	}
 
-	for (s--; *s >= '0' && *s <= '9'; s--, multiplier *= 10)
+	if (sign % 2 != 0)
+		mul = -mul;
+	for (s--; *s >= '0' && *s <= '9'; s--)
 	{
-		value += ((*s - '0') * multiplier);
+		value += (mul * ((*s - '0') * multiplier));
+		digits++;
+		if (digits < 10)
+			multiplier *= 10;
 	}
-
-	if (sign < 0)
-		value = -value;
 
 	return (value);
 }
